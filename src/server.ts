@@ -1,8 +1,15 @@
 import express from 'express';
-import { createCourse } from './routes';
 
 const app = express();
 
-app.get('/', createCourse);
+app.use(express.json());
 
-app.listen(3333, () => { console.log('listening on 3333')});
+app.get('/', (request, response) => response.json({ message: 'hello world!' }));
+
+app.post('/courses', (request, response) => {
+  const { name } = request.body;
+
+  return response.json({ name });
+});
+
+app.listen(3333, () => console.log('listening on 3333'));
