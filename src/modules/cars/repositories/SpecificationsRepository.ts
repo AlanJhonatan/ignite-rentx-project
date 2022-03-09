@@ -16,6 +16,8 @@ class SpecificationsRepository implements ISpecificationsRepository {
       description,
       created_at: new Date(),
     });
+
+    this.specifications.push(specification);
   }
 }
 
