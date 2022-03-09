@@ -7,6 +7,12 @@ const specificationsRoutes = Router();
 
 const specificationRepository = new SpecificationsRepository();
 
+specificationsRoutes.get('/', (request, response) => {
+  const specifications = specificationRepository.list();
+
+  return response.json(specifications);
+});
+
 specificationsRoutes.post('/', (request, response) => {
   const { name, description } = request.body;
 
