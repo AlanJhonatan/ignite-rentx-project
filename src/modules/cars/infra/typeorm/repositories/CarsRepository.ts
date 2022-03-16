@@ -5,7 +5,7 @@ import { getRepository, Repository } from 'typeorm';
 import { Car } from '../entities/Car';
 
 class CarsRepository implements ICarsRepository {
-  repository: Repository<Car>;
+  private repository: Repository<Car>;
 
   constructor() {
     this.repository = getRepository(Car);
