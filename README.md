@@ -38,7 +38,7 @@ The most important requirements and Business Rules. Separated by
 - [ ] Should not be able to update an nonexistent car.
 - [ ] Should not be able to update an ```license_plate``` with an that already exists.
 
-### Specficiations
+### Specifications
 
 #### Create Specification
 
@@ -48,14 +48,14 @@ The most important requirements and Business Rules. Separated by
 **Business Rule**
 - [ ] Should be registered only by ```admins``` users.
 
-#### Register Specification
+#### Car Specification Register
 **Functional Requirement**
-- [ ] Should be able to register an new specification to an car.
+- [X] Should be able to register an new specification to an car.
 
 **Business Rule**
-- [ ] Should be registered only by ```admins``` users.
-- [ ] Should not be able to register an specification for an non existing car.
-- [ ] Should not be able to register an already existing specification for an car.
+- [X] Should not be able to register an specification for an non existing car.
+- [X] Should not be able to register an already existing specification for same car.
+- [X] Should be registered only by ```admins``` users.
 
 #### List Specifications
 
