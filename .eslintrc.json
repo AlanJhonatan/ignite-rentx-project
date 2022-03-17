@@ -23,7 +23,6 @@
   "rules": {
     "prettier/prettier": "error",
     "quotes": ["error", "single"],
-    "comma-dangle": [ "error", "always-multiline"],
     "camelcase": "off",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
