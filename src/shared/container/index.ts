@@ -10,20 +10,17 @@ import { container } from 'tsyringe';
 
 container.registerSingleton<ICategoriesRepository>(
   'CategoriesRepository',
-  CategoriesRepository,
+  CategoriesRepository
 );
 
 container.registerSingleton<ISpecificationsRepository>(
   'SpecificationsRepository',
-  SpecificationsRepository,
+  SpecificationsRepository
 );
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
-  UsersRepository,
+  UsersRepository
 );
 
-container.registerSingleton<ICarsRepository>(
-  'CarsRepository',
-  CarsRepository,
-);
+container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
