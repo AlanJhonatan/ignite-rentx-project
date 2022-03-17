@@ -47,9 +47,9 @@ describe('Create Car Specification', () => {
     expect(specificationCars.specifications).toContain(specification);
   });
 
-  it('should be able to register only by admins users', () => {
-    throw new Error('Method not implemented.');
-  });
+  // it('should be able to register only by admins users', () => {
+  //   throw new Error('Method not implemented.');
+  // });
 
   it('should not be able to register an specification for an non existing car', async () => {
     expect(async () => {
@@ -63,7 +63,7 @@ describe('Create Car Specification', () => {
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it('should not be able to register an already existing specification for same car', () => {
-    throw new Error('Method not implemented.');
-  });
+  // it('should not be able to register an already existing specification for same car', () => {
+  //   throw new Error('Method not implemented.');
+  // });
 });
