@@ -21,13 +21,13 @@ The most important requirements and Business Rules. Separated by
 #### List Cars
 
 **Functional Requirement**
-- [ ] Should be able to list all available cars.
-- [ ] Should be able to list all available by category name.
-- [ ] Should be able to list all available by brand.
-- [ ] Should be able to list all available by car name.
+- [X] Should be able to list all available cars.
+- [X] Should be able to list all available by category name.
+- [X] Should be able to list all available by brand.
+- [X] Should be able to list all available by car name.
 
 **Business Rule**
-- [ ] Any user should be able to list available cars.
+- [X] Any user should be able to list available cars.
 
 #### Update Cars
 
