@@ -10,6 +10,8 @@ import { CarsImagesRepository } from '@modules/cars/repositories/in-memory/CarsI
 import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
 import { container } from 'tsyringe';
 
+import '@shared/container/providers';
+
 container.registerSingleton<ICategoriesRepository>(
   'CategoriesRepository',
   CategoriesRepository
