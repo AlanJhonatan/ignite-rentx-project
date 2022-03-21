@@ -16,21 +16,11 @@ describe('Create Category Controller', () => {
     const id = uuid();
     const password = await hash('admin', 8);
 
-    const user = {
-      id,
-      password,
-      name: 'Admin User',
-      email: 'admin@admin.com',
-      isAdmin: true,
-      driver_license: 'admin-1234',
-      created_at: 'now()',
-    };
-
     await connection.query(`
-      INSERT INTO 
-        USERS(id, name, email, driver_license, password, "isAdmin", created_at ) 
-      VALUES 
-        ('${user.id}', '${user.name}', '${user.email}', '${user.driver_license}', '${user.password}', ${user.isAdmin}, '${user.created_at}')
+    INSERT INTO 
+    USERS(id, name, email, driver_license, password, "isAdmin", created_at ) 
+    VALUES 
+    ('${id}', 'admin', 'admin@admin.com', 'admin-1234', '${password}', true, 'now()')
     `);
   });
 
