@@ -48,15 +48,15 @@ describe('Create Car Specification', () => {
   });
 
   it('should not be able to register an specification for an non existing car', async () => {
-    expect(async () => {
-      const car_id = '1234';
-      const specifications_id = ['1', '2'];
+    const car_id = '1234';
+    const specifications_id = ['1', '2'];
 
-      await createCarSpecificationUseCase.execute({
+    await expect(
+      createCarSpecificationUseCase.execute({
         car_id,
         specifications_id,
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError('This car does not exist.'));
   });
 
   // it('should be able to register only by admins users', () => {
