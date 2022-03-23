@@ -20,6 +20,9 @@ class Rental {
   car: Car;
 
   @Column()
+  car_id: string;
+
+  @Column()
   user_id: string;
 
   @Column()
