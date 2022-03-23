@@ -110,7 +110,7 @@ The most important requirements and Business Rules. Separated by
 - [X] Should not be able register an new rental, if already exists for user. 
 - [X] Should not be able register an new rental, if already exists for car. 
 - [X] The user should be authenticated by application.
-- [ ] On create an rental, the car status should be changed to unavailable.
+- [X] On create an rental, the car status should be changed to unavailable.
 
 #### Devolution Rental
 
@@ -125,3 +125,12 @@ The most important requirements and Business Rules. Separated by
 - [X] The user should be authenticated by application.
 - [X] If the returning hour is higher then expected return time, should be billed an fine due overdue.
 - [X] In case there is a fine, should be calculated with amount of rental.
+
+
+#### Devolution Rental
+
+**Functional Requirement**
+- [X] Should be able to get all rentals by user
+
+**Business Rule**
+- [X] The user should be authenticated by application
