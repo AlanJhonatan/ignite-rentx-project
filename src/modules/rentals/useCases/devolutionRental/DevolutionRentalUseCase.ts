@@ -34,10 +34,6 @@ class DevolutionRentalUseCase {
       throw new AppError('Rental does not exists!');
     }
 
-    if (!car) {
-      throw new AppError('This car does not exists!');
-    }
-
     const dateNow = this.dateProvider.dateNow();
 
     let daily = this.dateProvider.compareInDays(
@@ -45,13 +41,13 @@ class DevolutionRentalUseCase {
       this.dateProvider.dateNow()
     );
 
-    if (daily <= minimum_daily) {
-      daily = 1;
+    if (daily <= 0) {
+      daily = minimum_daily;
     }
 
     const delay = this.dateProvider.compareInDays(
-      rental.expect_return_date,
-      dateNow
+      dateNow,
+      rental.expect_return_date
     );
 
     let total = 0;
