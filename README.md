@@ -115,12 +115,13 @@ The most important requirements and Business Rules. Separated by
 #### Car Devolution
 
 **Functional Requirement**
-- [ ] Should be able to return car.
+- [X] Should be able to return car.
 
 **Business Rule**
-- [ ] Returning the car with less then 24 hours, should be billed the entire day.
-- [ ] After returned, the Car should be available to another rental.  
-- [ ] After returned, the User should be available to another rental.
-- [ ] After returned, should be calculated the rental amount. 
-- [ ] If the returning hour is higher then expected return time, should be billed an fine due overdue.
-- [ ] In case there is a fine, should be calculated with amount of rental.
+- [X] Returning the car with less then 24 hours, should be billed the entire day.
+- [X] After returned, the Car should be available to another rental.  
+- [X] After returned, the User should be available to another rental.
+- [X] After returned, should be calculated the rental amount.
+- [X] The user should be authenticated by application.
+- [X] If the returning hour is higher then expected return time, should be billed an fine due overdue.
+- [X] In case there is a fine, should be calculated with amount of rental.
