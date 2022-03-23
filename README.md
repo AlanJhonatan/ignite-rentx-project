@@ -98,15 +98,29 @@ The most important requirements and Business Rules. Separated by
 **Functional Requirement**
 **Business Rule**
 
-
-
 ### Rental
 
 #### Create Rental
 
 **Functional Requirement**
-- [ ] Should be able to create an rental.
+- [X] Should be able to create an rental.
 
 **Business Rule**
-- [ ] The rental ```expect_return_date``` parameter should be at least 24 hours by default.
-- [ ] Should not be possible register an new rental, if an old rental already exists for current account. 
+- [X] The rental ```expect_return_date``` parameter should be at least 24 hours by default.
+- [X] Should not be able register an new rental, if already exists for user. 
+- [X] Should not be able register an new rental, if already exists for car. 
+- [X] The user should be authenticated by application.
+- [ ] On create an rental, the car status should be changed to unavailable.
+
+#### Car Devolution
+
+**Functional Requirement**
+- [ ] Should be able to return car.
+
+**Business Rule**
+- [ ] Returning the car with less then 24 hours, should be billed the entire day.
+- [ ] After returned, the Car should be available to another rental.  
+- [ ] After returned, the User should be available to another rental.
+- [ ] After returned, should be calculated the rental amount. 
+- [ ] If the returning hour is higher then expected return time, should be billed an fine due overdue.
+- [ ] In case there is a fine, should be calculated with amount of rental.
