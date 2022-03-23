@@ -3,6 +3,9 @@ import { Rental } from '../infra/typeorm/entities/Rental';
 
 interface IRentalsRepository {
   create({
+    id,
+    end_date,
+    total,
     user_id,
     car_id,
     expect_return_date,
