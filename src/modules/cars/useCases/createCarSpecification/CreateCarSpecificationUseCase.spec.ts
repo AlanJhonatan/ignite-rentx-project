@@ -19,7 +19,7 @@ describe('Create Car Specification', () => {
     );
   });
 
-  it('should be able to add an new specificationto an car', async () => {
+  it('should be able to add an new specification to an car', async () => {
     const car = await carsRepositoryInMemory.create({
       name: 'Car One',
       description: 'One Description',
@@ -47,10 +47,6 @@ describe('Create Car Specification', () => {
     expect(specificationCars.specifications).toContain(specification);
   });
 
-  // it('should be able to register only by admins users', () => {
-  //   throw new Error('Method not implemented.');
-  // });
-
   it('should not be able to register an specification for an non existing car', async () => {
     expect(async () => {
       const car_id = '1234';
@@ -62,6 +58,10 @@ describe('Create Car Specification', () => {
       });
     }).rejects.toBeInstanceOf(AppError);
   });
+
+  // it('should be able to register only by admins users', () => {
+  //   throw new Error('Method not implemented.');
+  // });
 
   // it('should not be able to register an already existing specification for same car', () => {
   //   throw new Error('Method not implemented.');

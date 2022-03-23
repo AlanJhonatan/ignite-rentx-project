@@ -18,9 +18,9 @@ describe('Create Category Controller', () => {
 
     await connection.query(`
     INSERT INTO 
-    USERS(id, name, email, driver_license, password, "isAdmin", created_at ) 
+      USERS(id, name, email, driver_license, password, "isAdmin", created_at ) 
     VALUES 
-    ('${id}', 'admin', 'admin@admin.com', 'admin-1234', '${password}', true, 'now()')
+      ('${id}', 'admin', 'admin@admin.com', 'admin-1234', '${password}', true, 'now()')
     `);
   });
 
