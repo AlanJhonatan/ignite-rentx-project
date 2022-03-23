@@ -112,7 +112,7 @@ The most important requirements and Business Rules. Separated by
 - [X] The user should be authenticated by application.
 - [ ] On create an rental, the car status should be changed to unavailable.
 
-#### Car Devolution
+#### Devolution Rental
 
 **Functional Requirement**
 - [X] Should be able to return car.
