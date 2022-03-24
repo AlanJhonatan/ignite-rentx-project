@@ -4,3 +4,4 @@ dist/
 *.drawio
 tmp/**
 *.csv
+.env
