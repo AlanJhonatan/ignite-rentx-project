@@ -22,7 +22,7 @@ async function create() {
   await connection.query(
     `INSERT INTO USERS(id, name, email, driver_license, password, "isAdmin", created_at ) 
       VALUES ('${user.id}', '${user.name}', '${user.email}', '${user.driver_license}', '${user.password}', ${user.isAdmin}, '${user.created_at}')
-    `,
+    `
   );
 
   return {

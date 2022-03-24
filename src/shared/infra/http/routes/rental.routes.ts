@@ -3,7 +3,6 @@ import { DevolutionRentalController } from '@modules/rentals/useCases/devolution
 import { ListRentalsByUserController } from '@modules/rentals/useCases/listRentalsByUser/ListRentalsByUserController';
 import { Router } from 'express';
 
-import { app } from '../app';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const rentalRoutes = Router();

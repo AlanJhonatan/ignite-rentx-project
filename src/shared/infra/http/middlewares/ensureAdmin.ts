@@ -6,7 +6,7 @@ import { AppError } from '@shared/errors/AppError';
 export async function ensureAdmin(
   request: Request,
   response: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Promise<void> {
   const { id } = request.user;
 
@@ -14,7 +14,10 @@ export async function ensureAdmin(
   const user = await usersRepository.findById(id);
 
   if (!user.isAdmin) {
-    throw new AppError("This user doesn't has permission to access this resource.", 401);
+    throw new AppError(
+      'This user doesn\'t has permission to access this resource.',
+      401
+    );
   }
 
   return next();

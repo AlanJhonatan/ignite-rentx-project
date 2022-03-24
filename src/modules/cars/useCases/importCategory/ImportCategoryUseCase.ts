@@ -12,7 +12,7 @@ interface IImportCategory {
 class ImportCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: CategoriesRepository,
+    private categoriesRepository: CategoriesRepository
   ) {}
 
   loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
@@ -25,9 +25,16 @@ class ImportCategoryUseCase {
       stream.pipe(parseFile);
 
       parseFile
-        .on('data', async ([name, description]) => { categories.push({ name, description }); })
-        .on('end', () => { fs.promises.unlink(file.path); resolve(categories); })
-        .on('error', (err) => { reject(err); });
+        .on('data', async ([name, description]) => {
+          categories.push({ name, description });
+        })
+        .on('end', () => {
+          fs.promises.unlink(file.path);
+          resolve(categories);
+        })
+        .on('error', (err) => {
+          reject(err);
+        });
     });
   }
 

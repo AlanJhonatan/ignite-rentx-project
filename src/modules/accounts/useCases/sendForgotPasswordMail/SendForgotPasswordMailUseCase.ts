@@ -2,7 +2,7 @@ import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepositor
 import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 import { resolve } from 'path';
 import { inject, injectable } from 'tsyringe';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidV4 } from 'uuid';
 
 import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider';
 import { IMailProvider } from '@shared/container/providers/MailProvider/IMailProvider';
@@ -13,13 +13,10 @@ class SendForgotPasswordMailUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
-
     @inject('UsersTokensRepository')
     private usersTokensRepository: IUsersTokensRepository,
-
-    @inject('DateProvider')
+    @inject('DayjsDateProvider')
     private dateProvider: IDateProvider,
-
     @inject('MailProvider')
     private mailProvider: IMailProvider
   ) {}
@@ -40,7 +37,7 @@ class SendForgotPasswordMailUseCase {
       throw new AppError('User does not exists!');
     }
 
-    const token = uuid();
+    const token = uuidV4();
 
     const expires_date = this.dateProvider.addHours(3);
 
@@ -57,7 +54,7 @@ class SendForgotPasswordMailUseCase {
 
     await this.mailProvider.sendMail(
       email,
-      'Recuperação de senha',
+      'Recuperação de Senha',
       variables,
       templatePath
     );

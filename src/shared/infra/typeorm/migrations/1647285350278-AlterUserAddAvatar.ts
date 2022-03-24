@@ -8,7 +8,7 @@ export class AlterUserAddAvatar1647285350278 implements MigrationInterface {
         name: 'avatar',
         type: 'varchar',
         isNullable: true,
-      }),
+      })
     );
   }
 

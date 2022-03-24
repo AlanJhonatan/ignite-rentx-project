@@ -9,11 +9,14 @@ import { AppError } from '@shared/errors/AppError';
 class CreateUserUseCase {
   constructor(
     @inject('UsersRepository')
-    private usersRepository: IUsersRepository,
+    private usersRepository: IUsersRepository
   ) {}
 
   async execute({
-    name, email, driver_license, password,
+    name,
+    email,
+    driver_license,
+    password,
   }: ICreateUserDTO): Promise<void> {
     const userAlreadyExists = await this.usersRepository.findByEmail(email);
 
@@ -24,7 +27,10 @@ class CreateUserUseCase {
     const passwordHash = await hash(password, 8);
 
     await this.usersRepository.create({
-      name, email, driver_license, password: passwordHash,
+      name,
+      email,
+      driver_license,
+      password: passwordHash,
     });
   }
 }

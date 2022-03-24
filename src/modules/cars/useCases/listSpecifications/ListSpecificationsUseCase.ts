@@ -6,7 +6,7 @@ import { inject, injectable } from 'tsyringe';
 class ListSpecificationsUseCase {
   constructor(
     @inject('SpecificationsRepository')
-    private specificationsRepository: SpecificationsRepository,
+    private specificationsRepository: SpecificationsRepository
   ) {}
 
   async execute(): Promise<Specification[]> {
