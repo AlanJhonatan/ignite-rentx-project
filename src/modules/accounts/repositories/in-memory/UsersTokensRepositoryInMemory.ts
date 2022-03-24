@@ -4,6 +4,22 @@ import { UserTokens } from '@modules/accounts/infra/typeorm/entities/UserTokens'
 import { IUsersTokensRepository } from '../IUsersTokensRepository';
 
 class UsersTokensRepositoryInMemory implements IUsersTokensRepository {
+  async findByUserIdAndRefreshToken(
+    user_id: string,
+    refresh_token: string
+  ): Promise<UserTokens> {
+    return this.usersTokens.find(
+      (userToken) =>
+        userToken.user_id === user_id &&
+        userToken.refresh_token === refresh_token
+    );
+  }
+
+  async findByRefreshToken(refresh_token: string): Promise<UserTokens> {
+    return this.usersTokens.find(
+      (userToken) => userToken.refresh_token === refresh_token
+    );
+  }
   private usersTokens: UserTokens[] = [];
 
   async create({
@@ -21,8 +37,14 @@ class UsersTokensRepositoryInMemory implements IUsersTokensRepository {
 
     this.usersTokens.push(userToken);
 
-    // return Promise.resolve(userToken);
     return userToken;
+  }
+
+  async deleteById(id: string): Promise<void> {
+    this.usersTokens.splice(
+      this.usersTokens.findIndex((userToken) => userToken.id === id),
+      1
+    );
   }
 }
 
