@@ -98,6 +98,17 @@ The most important requirements and Business Rules. Separated by
 **Functional Requirement**
 **Business Rule**
 
+#### Recover Password
+
+**Functional Requirement**
+- [ ] User should be able to recover password given an e-mail
+- [ ] User should receive an e-mail with step-by-step to recover password
+- [ ] User should be able to change to an new password
+
+**Business Rule**
+- [ ] User must to input an new password
+- [ ] The link sent to the recover should expires in 3 hours
+
 ### Rental
 
 #### Create Rental
@@ -134,3 +145,5 @@ The most important requirements and Business Rules. Separated by
 
 **Business Rule**
 - [X] The user should be authenticated by application
+
+
