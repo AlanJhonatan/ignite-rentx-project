@@ -15,12 +15,13 @@ class UploadCarImagesController {
     const uploadCarImagesUseCase = container.resolve(UploadCarImagesUseCase);
 
     const images_name = images.map((file) => file.filename);
-    const carsImages = await uploadCarImagesUseCase.execute({
+
+    await uploadCarImagesUseCase.execute({
       car_id: id,
       images_name,
     });
 
-    return response.status(201).json(carsImages);
+    return response.status(201).send();
   }
 }
 
