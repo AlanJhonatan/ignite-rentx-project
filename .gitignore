@@ -3,6 +3,9 @@ coverage/
 .vscode/
 dist/
 *.drawio
-tmp/**
 *.csv
 .env
+
+## Keep
+tmp/*
+!tmp/.gitkeep
