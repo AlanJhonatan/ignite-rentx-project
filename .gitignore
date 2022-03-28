@@ -5,6 +5,7 @@ dist/
 *.drawio
 *.csv
 .env
+ormconfig.json
 
 ## Keep
 tmp/*
